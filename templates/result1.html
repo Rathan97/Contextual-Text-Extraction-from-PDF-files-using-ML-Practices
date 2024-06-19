@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Director Information</h1>
+        {% for director, info in director_info.items() %}
+            <div class="director-info">
+                <h2>{{ director }}</h2>
+                <p>DIN: {{ info['DIN'] }}</p>
+                <p>Status: {{ info['Status'] }}</p>
+            </div>
+        {% endfor %}
+        <hr>
+        <h2>PDF Text:</h2>
+        <p>{{ text }}</p>
+    </div>
+</body>
+</html>
